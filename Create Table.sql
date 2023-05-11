@@ -6,7 +6,7 @@ country_name varchar(20),
 region_id int);
 
 
--- Write a SQL statement to create a simple table countries including columns country_id,country_name and region_id which is already exists.
+-- 2. Write a SQL statement to create a simple table countries including columns country_id,country_name and region_id which is already exists.
 
 Create Table IF NOT EXISTS countries(
 country_id int, 
@@ -20,3 +20,8 @@ IF NOT EXISTS- Something new to me!
 02. It can be used in a SELECT, UPDATE, INSERT or DELETE statement.
 03. Checks whether correlated NESTED QUERIES are empty or Not.
 */
+
+
+-- 3. Write a SQL statement to create the structure of a table dup_countries similar to countries.
+Create Table IF NOT EXISTS dup_countries 
+LIKE countries; 
