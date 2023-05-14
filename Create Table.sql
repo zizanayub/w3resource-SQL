@@ -41,3 +41,32 @@ Create Table IF NOT EXISTS project01.dup_countries
 AS Select * FROM project01.Countries; 
 
 DESC project01.dup_countries; 
+
+
+
+
+
+-- 5. Write a SQL statement to create a table countries set a constraint NOT NULL.
+Create Table IF NOT EXISTS Project01.countries(
+country_id int NOT NULL, 
+country_name varchar(20) NOT NULL,
+region_id int NOT NULL); 
+
+DESC project01.countries; 
+
+
+
+
+
+/* 6. Write a SQL statement to create a table named jobs including columns job_id, job_title, min_salary, max_salary and 
+check whether the max_salary amount exceeding the upper limit 25000. */
+
+Create Table project01.jobs
+(job_id int,
+job_title varchar(20),
+min_salary decimal(6,0), 
+max_salary decimal(6,0)
+Check (max_salary <= 25000));
+
+
+DESC project01.jobs; 
