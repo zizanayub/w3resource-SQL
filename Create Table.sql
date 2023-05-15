@@ -70,3 +70,20 @@ Check (max_salary <= 25000));
 
 
 DESC project01.jobs; 
+
+
+
+
+
+/* Write a SQL statement to create a table named countries including columns country_id, country_name and region_id 
+and make sure that no countries except Italy, India and China will be entered in the table. */
+
+
+Create Table IF NOT EXISTS project01.countries 
+(country_id decimal(6,0),
+country_name varchar(20)
+Check(country_name IN ('Italy','India','China')),
+region_id decimal(6,0));
+
+DESC project01.countries; 
+
