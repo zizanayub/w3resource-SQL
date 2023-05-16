@@ -75,7 +75,7 @@ DESC project01.jobs;
 
 
 
-/* Write a SQL statement to create a table named countries including columns country_id, country_name and region_id 
+/* 7. Write a SQL statement to create a table named countries including columns country_id, country_name and region_id 
 and make sure that no countries except Italy, India and China will be entered in the table. */
 
 
@@ -86,4 +86,22 @@ Check(country_name IN ('Italy','India','China')),
 region_id decimal(6,0));
 
 DESC project01.countries; 
+
+
+
+
+/* Write a SQL statement to create a table named job_histry including columns employee_id, start_date, end_date, job_id and department_id 
+and make sure that the value against column end_date will be entered at the time of insertion to the format like '--/--/----'. */
+
+
+Create Table IF NOT EXISTS project01.Job_histry 
+(employee_id int NOT NULL,
+start_date date NOT NULL,
+end_date date 
+CHECK (end_date Like '--/--/----'),
+job_id decimal(6,0) NOT NULL, 
+department_id decimal(6,0) NOT NULL);
+
+
+DESC project01.job_histry; 
 
