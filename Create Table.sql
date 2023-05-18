@@ -90,7 +90,7 @@ DESC project01.countries;
 
 
 
-/* Write a SQL statement to create a table named job_histry including columns employee_id, start_date, end_date, job_id and department_id 
+/* 8. Write a SQL statement to create a table named job_histry including columns employee_id, start_date, end_date, job_id and department_id 
 and make sure that the value against column end_date will be entered at the time of insertion to the format like '--/--/----'. */
 
 
@@ -104,4 +104,21 @@ department_id decimal(6,0) NOT NULL);
 
 
 DESC project01.job_histry; 
+
+
+
+
+/* 9. Write a SQL statement to create a table named countries including columns country_id,country_name and region_id and 
+make sure that no duplicate data against column country_id will be allowed at the time of insertion.    */
+
+
+Create Table IF NOT EXISTS project01.Countries2 
+(country_id decimal(6,0) NOT NULL,
+country_name varchar(30) NOT NULL,
+region_id decimal(8,0) NOT NULL,
+UNIQUE(country_id)
+); 
+
+
+DESC project01.Countries2; 
 
