@@ -122,3 +122,19 @@ UNIQUE(country_id)
 
 DESC project01.Countries2; 
 
+
+
+
+/* 10. 10. Write a SQL statement to create a table named jobs including columns job_id, job_title, min_salary and max_salary, 
+and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary 
+is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns. */
+
+
+Create Table IF NOT EXISTS project01.jobs1
+(job_id decimal(6,0) NOT NULL,
+job_title varchar(20) NOT NULL DEFAULT ' ',
+min_salary int NOT NULL DEFAULT 8000,
+max_salary int DEFAULT NULL); 
+
+DESC project01.jobs1; 
+
