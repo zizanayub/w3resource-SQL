@@ -138,3 +138,22 @@ max_salary int DEFAULT NULL);
 
 DESC project01.jobs1; 
 
+
+
+
+/* 11. Write a SQL statement to create a table named countries including columns country_id, country_name and region_id and make sure that the country_id column 
+will be a key field which will not contain any duplicate data at the time of insertion. */
+
+
+CREATE TABLE IF NOT EXISTS project01.countries3
+(country_id int NOT NULL UNIQUE PRIMARY KEY,
+country_name varchar(20) NOT NULL,
+region_id decimal(6,0) NOT NULL); 
+
+DESC project01.countries3; 
+
+
+
+
+/* 12. Write a SQL statement to create a table countries including columns country_id, country_name and region_id 
+and make sure that the column country_id will be unique and store an auto incremented value. */ 
