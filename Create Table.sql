@@ -157,3 +157,13 @@ DESC project01.countries3;
 
 /* 12. Write a SQL statement to create a table countries including columns country_id, country_name and region_id 
 and make sure that the column country_id will be unique and store an auto incremented value. */ 
+
+
+Create Table IF NOT EXISTS project01.countries4
+(country_id int NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+country_name varchar(255),
+region_id decimal(6,0)); 
+
+DESC project01.countries4; 
+
+/* It will show "AUTO_INCREMENT" in extra column */
