@@ -167,3 +167,43 @@ region_id decimal(6,0));
 DESC project01.countries4; 
 
 /* It will show "AUTO_INCREMENT" in extra column */
+
+
+
+
+
+/* 13. Write a SQL statement to create a table countries including columns country_id, country_name and 
+region_id and make sure that the combination of columns country_id and region_id will be unique.
+*/
+
+Create Table IF NOT EXISTS project01.countries5
+(country_id int NOT NULL,
+country_name varchar(255),
+region_id decimal(6,0) NOT NULL,
+primary key(country_id,region_id)); 
+
+DESC project01.countries5; 
+
+
+
+
+
+/*
+14. Write a SQL statement to create a table job_history including columns employee_id, start_date, end_date, job_id and department_id 
+and make sure that, the employee_id column does not contain any duplicate value at the time 
+of insertion and the foreign key column job_id contain only those values which are exists in the jobs table.
+*/
+
+CREATE TABLE IF NOT EXISTS project01.job_history
+(employee_id decimal(6,0) NOT NULL PRIMARY KEY,
+START_DATE date NOT NULL,
+END_DATE date NOT NULL, 
+job_id int,
+department_id decimal(4,0),
+FOREIGN KEY (job_id) REFERENCES project01.jobs(job_id)); 
+
+
+DESC project01.job_history; 
+
+-- Wrong 
+
