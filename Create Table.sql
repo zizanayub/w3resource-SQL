@@ -211,10 +211,9 @@ START_DATE date NOT NULL,
 END_DATE date NOT NULL, 
 job_id int,
 department_id decimal(4,0),
-FOREIGN KEY (job_id) REFERENCES project01.jobs(job_id)); 
+FOREIGN KEY (job_id) REFERENCES project01.jobs2(job_id)); 
 
 
 DESC project01.job_history; 
 
--- Wrong 
 
