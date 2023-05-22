@@ -62,7 +62,7 @@ DESC project01.countries;
 check whether the max_salary amount exceeding the upper limit 25000. */
 
 Create Table project01.jobs
-(job_id int,
+(job_id int NOT NULL PRIMARY KEY,
 job_title varchar(20),
 min_salary decimal(6,0), 
 max_salary decimal(6,0)
@@ -193,6 +193,17 @@ DESC project01.countries5;
 and make sure that, the employee_id column does not contain any duplicate value at the time 
 of insertion and the foreign key column job_id contain only those values which are exists in the jobs table.
 */
+Create Table project01.jobs2
+(job_id int NOT NULL PRIMARY KEY,
+job_title varchar(20),
+min_salary decimal(6,0), 
+max_salary decimal(6,0)
+Check (max_salary <= 25000));
+
+
+DESC project01.jobs2;
+
+
 
 CREATE TABLE IF NOT EXISTS project01.job_history
 (employee_id decimal(6,0) NOT NULL PRIMARY KEY,
