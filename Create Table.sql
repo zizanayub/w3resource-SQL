@@ -251,7 +251,7 @@ Assume the structure of departments table below.
 */
 
 
-Create Table exercises.departments
+Create Table exercises.departments1
 (
 department_id decimal(4,0) DEFAULT 0 primary key,
 department_name varchar(30) NOT NULL,
@@ -274,7 +274,7 @@ salary decimal(10,0) NOT NULL,
 commission decimal(3,0) NOT NULL, 
 manager_id decimal(6,0) DEFAULT NULL,
 department_id decimal(4,0) DEFAULT NULL,
-FOREIGN KEY(department_id,manager_id) REFERENCES exercises.departments(department_id,manager_id)
+FOREIGN KEY(department_id,manager_id) REFERENCES exercises.departments1(department_id,manager_id)
 );
 
 
@@ -282,3 +282,6 @@ DESC exercises.employees;
 
 
 -- Error
+
+
+
