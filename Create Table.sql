@@ -366,3 +366,74 @@ CREATE TABLE exercises.employees3
 11 rows in set (0.14 sec)
 
 */ 
+
+
+
+
+
+
+
+/*
+17. Write a SQL statement to create a table employees including columns employee_id, first_name, last_name, job_id, salary and 
+make sure that, the employee_id column does not contain any duplicate value at the time of insertion, and the foreign key 
+column job_id, referenced by the column job_id of jobs table, can contain only those values which are exists in the jobs table. 
+The InnoDB Engine have been used to create the tables. The specialty of the statement is that, The ON 
+UPDATE CASCADE action allows you to perform cross-table update and ON DELETE RESTRICT action reject the deletion. The default action is ON DELETE RESTRICT.
+
+Assume that the structure of the table jobs and InnoDB Engine have been used to create the table jobs.
+
+CREATE TABLE IF NOT EXISTS jobs ( 
+JOB_ID integer NOT NULL UNIQUE PRIMARY KEY, 
+JOB_TITLE varchar(35) NOT NULL DEFAULT ' ', 
+MIN_SALARY decimal(6,0) DEFAULT 8000, 
+MAX_SALARY decimal(6,0) DEFAULT NULL
+)ENGINE=InnoDB;
+
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| JOB_ID     | int(11)      | NO   | PRI | NULL    |       |
+| JOB_TITLE  | varchar(35)  | NO   |     |         |       |
+| MIN_SALARY | decimal(6,0) | YES  |     | 8000    |       |
+| MAX_SALARY | decimal(6,0) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+*/
+
+
+
+CREATE TABLE exercises.employees4
+(
+  employee_id decimal(6,0) NOT NULL PRIMARY KEY,
+  first_name varchar(50) NOT NULL,
+  last_name varchar(50) NOT NULL,
+  job_id int NOT NULL,
+  salary decimal(6,0),
+  FOREIGN KEY (job_id) REFERENCES project01.jobs2(job_id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT)
+  Engine = InnoDB; 
+  
+
+
+/*
+Success 
+
+
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| employee_id | decimal(6,0) | NO   | PRI | NULL    |       |
+| first_name  | varchar(50)  | NO   |     | NULL    |       |
+| last_name   | varchar(50)  | NO   |     | NULL    |       |
+| job_id      | int          | NO   | MUL | NULL    |       |
+| salary      | decimal(6,0) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+*/ 
+
+
+
+  
