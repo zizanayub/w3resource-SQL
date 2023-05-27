@@ -253,7 +253,7 @@ Assume the structure of departments table below.
 
 Create Table exercises.departments1
 (
-department_id decimal(4,0) DEFAULT 0 primary key,
+department_id decimal(4,0) primary key,
 department_name varchar(30) NOT NULL,
 manager_id decimal(6,0) DEFAULT 0,
 location_id decimal(4,0)
@@ -285,3 +285,84 @@ DESC exercises.employees;
 
 
 
+
+
+/*
+16. Write a SQL statement to create a table employees including columns employee_id, first_name, last_name, email, phone_number hire_date, 
+job_id, salary, commission, manager_id and department_id and make sure that, the employee_id column does not contain any duplicate value at the time of insertion, 
+and the foreign key column department_id, reference by the column department_id of departments table, can contain only those values which are exists in the departments
+table and another foreign key column job_id, referenced by the column job_id of jobs table, 
+can contain only those values which are exists in the jobs table. The InnoDB Engine have been used to create the tables. 
+
+
+"A foreign key constraint is not required merely to join two tables. For storage engines other than InnoDB, it is possible when defining a column to use 
+a REFERENCES tbl_name(col_name) clause, which has no actual effect, and serves 
+only as a memo or comment to you that the column which you are currently defining is intended to refer to a column in another table." - Reference dev.mysql.com
+
+
+Assume that the structure of two tables departments and jobs.
+
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| DEPARTMENT_ID   | decimal(4,0) | NO   | PRI | 0       |       |
+| DEPARTMENT_NAME | varchar(30)  | NO   |     | NULL    |       |
+| MANAGER_ID      | decimal(6,0) | YES  |     | NULL    |       |
+
+| LOCATION_ID     | decimal(4,0) | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+
+
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| JOB_ID     | varchar(10)  | NO   | PRI |         |       |
+| JOB_TITLE  | varchar(35)  | NO   |     | NULL    |       |
+| MIN_SALARY | decimal(6,0) | YES  |     | NULL    |       |
+| MAX_SALARY | decimal(6,0) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+
+*/
+
+
+
+CREATE TABLE exercises.employees3
+(
+  Employee_id decimal(6,0) NOT NULL PRIMARY KEY,
+  first_name varchar(50) NOT NULL,
+  last_name varchar(50) NOT NULL,
+  email varchar(50) NOT NULL,
+  phone_number decimal(11,0) NOT NULL,
+  hire_date date NOT NULL,
+  job_id int NOT NULL,
+  salary decimal(6,0),
+  commission decimal(2,2) NOT NULL,
+  manager_id decimal(6,0),
+  department_id decimal(4,0),
+  FOREIGN KEY (department_id) REFERENCES exercises.departments1(department_id),
+  FOREIGN KEY (job_id) REFERENCES project01.jobs2(job_id))
+  ENGINE = InnoDB; 
+  
+  
+  
+  -- Worked and Successful 
+  /*
+  +---------------+---------------+------+-----+---------+-------+
+| Field         | Type          | Null | Key | Default | Extra |
++---------------+---------------+------+-----+---------+-------+
+| Employee_id   | decimal(6,0)  | NO   | PRI | NULL    |       |
+| first_name    | varchar(50)   | NO   |     | NULL    |       |
+| last_name     | varchar(50)   | NO   |     | NULL    |       |
+| email         | varchar(50)   | NO   |     | NULL    |       |
+| phone_number  | decimal(11,0) | NO   |     | NULL    |       |
+| hire_date     | date          | NO   |     | NULL    |       |
+| job_id        | int           | NO   | MUL | NULL    |       |
+| salary        | decimal(6,0)  | YES  |     | NULL    |       |
+| commission    | decimal(2,2)  | NO   |     | NULL    |       |
+| manager_id    | decimal(6,0)  | YES  |     | NULL    |       |
+| department_id | decimal(4,0)  | YES  | MUL | NULL    |       |
++---------------+---------------+------+-----+---------+-------+
+11 rows in set (0.14 sec)
+
+*/ 
