@@ -203,4 +203,47 @@ SELECT * FROM exercises.countries_new;
 
 
 INSERT INTO project01.jobs2 VALUES
-(1023, 'Data Analyst', 45000, 500000);  
+(1023, 'Data Analyst', 10000, 24000);  
+
+
+/*
++--------+--------------+------------+------------+
+| job_id | job_title    | min_salary | max_salary |
++--------+--------------+------------+------------+
+|   1023 | Data Analyst |      10000 |      24000 |
+*/
+
+
+
+
+
+
+
+
+
+/*
+9. Write a SQL statement to insert a record into the table countries to ensure that, a country_id and region_id combination will be entered once in the table.
+*/
+
+
+INSERT INTO exercises.countries VALUES ('C2', 'UAE', 183); 
+
+
+/*
++------------+--------------+-----------+
+| country_id | country_name | region_id |
++------------+--------------+-----------+
+| A1         | Bangladesh   |      1001 |
+| B2         | India        |      NULL |
+| NULL       | NULL         |      NULL |
+| C1         | Pakistan     |      NULL |
+| D1         | USA          |      1200 |
+| D3         | Canada       |      1009 |
+| C3         | Nigeria      |      1989 |
+| A1         | Bangladesh   |      1001 |
+| B2         | India        |      NULL |
+| C2         | Bangladesh   |       183 |
+| C2         | UAE          |       183 |
+
+*/
+
