@@ -203,4 +203,4 @@ SELECT * FROM exercises.countries_new;
 
 
 INSERT INTO project01.jobs2 VALUES
-(1023, 'Data Analyst', 45000);  
+(1023, 'Data Analyst', 45000, 500000);  
