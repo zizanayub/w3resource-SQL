@@ -149,3 +149,58 @@ INSERT INTO exercises.countries VALUES
 
 
 
+
+
+
+
+/*
+6. Write a SQL statement insert rows from country_new table to countries table.
+
+Here is the rows for country_new table. Assume that, the countries table is empty.
+
++------------+--------------+-----------+
+| COUNTRY_ID | COUNTRY_NAME | REGION_ID |
++------------+--------------+-----------+
+| C0001      | India        |      1001 |
+| C0002      | USA          |      1007 |
+| C0003      | UK           |      1003 |
++------------+--------------+-----------+
+*/
+
+
+INSERT INTO exercises.countries
+SELECT * FROM exercises.countries_new; 
+
+-- There need a space. (Must)
+
+
+/*
+
+| country_id | country_name | region_id |
++------------+--------------+-----------+
+| A1         | Bangladesh   |      1001 |
+| B2         | India        |      NULL |
+| NULL       | NULL         |      NULL |
+| C1         | Pakistan     |      NULL |
+| D1         | USA          |      1200 |
+| D3         | Canada       |      1009 |
+| C3         | Nigeria      |      1989 |
+| A1         | Bangladesh   |      1001 |
+| B2         | India        |      NULL |
++------------+--------------+-----------+
+
+*/
+
+
+
+
+
+
+
+/*
+7. Write a SQL statement to insert one row in jobs table to ensure that no duplicate value will be entered in the job_id column.
+*/
+
+
+INSERT INTO project01.jobs2 VALUES
+(1023, 'Data Analyst', 45000);  
