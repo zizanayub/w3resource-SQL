@@ -247,3 +247,21 @@ INSERT INTO exercises.countries VALUES ('C2', 'UAE', 183);
 
 */
 
+
+
+
+/*
+10. Write a SQL statement to insert rows into the table countries in which the value of country_id column will be unique and auto incremented.
+*/
+
+Create Table exercises.countries1
+(
+ country_id varchar(2) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ country_name varchar(55) NOT NULL,
+ region_id decimal(10,0)
+ );
+ 
+ INSERT INTO exercises.countries1 VALUES('Zimbabwe',14555); 
+
+
+
