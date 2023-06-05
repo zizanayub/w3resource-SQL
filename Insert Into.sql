@@ -310,3 +310,35 @@ CREATE TABLE exercises.countries2
 */
 
 
+
+
+
+
+
+
+/*
+12. Write a SQL statement to insert rows in the job_history table in which one column job_id is containing those values which are 
+exists in job_id column of jobs table.
+*/
+
+INSERT INTO project01.jobs2 VALUES
+(121, 'Manager', 12000, 22000); 
+
+INSERT INTO project01.job_history VALUES 
+(121,'2021-01-01','2022-06-05', 121, 2345);
+INSERT INTO project01.job_history VALUES 
+(1023,'2021-01-01','2022-06-05', 1023, 2345); 
+
+
+/*
++-------------+------------+------------+--------+---------------+
+| employee_id | START_DATE | END_DATE   | job_id | department_id |
++-------------+------------+------------+--------+---------------+
+|         121 | 2021-01-01 | 2022-06-05 |    121 |          2345 |
+|        1023 | 2021-01-01 | 2022-06-05 |   1023 |          2345 |
++-------------+------------+------------+--------+---------------+
+*/
+
+
+
+
