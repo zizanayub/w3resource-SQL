@@ -342,3 +342,11 @@ INSERT INTO project01.job_history VALUES
 
 
 
+
+/*
+13. Write a SQL statement to insert rows into the table employees in which a set of columns department_id 
+and manager_id contains a unique value and that combined values must have exists into the table departments.
+*/
+
+
+
