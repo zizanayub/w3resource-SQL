@@ -279,3 +279,34 @@ Create Table exercises.countries1
 
 
 
+
+
+
+
+/*
+11. Write a SQL statement to insert records into the table countries to ensure that the country_id column will not contain any duplicate data and 
+this will be automatically incremented and the column
+country_name will be filled up by 'N/A' if no value assigned for that column.
+*/
+
+
+CREATE TABLE exercises.countries2
+(
+ country_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ country_name varchar(50) DEFAULT 'N/A',
+ region_id decimal(10,0) NOT NULL
+ );
+ 
+ INSERT INTO exercises.countries2(region_id) VALUES (122); 
+
+
+/*
++------------+--------------+-----------+
+| country_id | country_name | region_id |
++------------+--------------+-----------+
+|          1 | N/A          |       122 |
++------------+--------------+-----------+
+1 row in set (0.11 sec)
+*/
+
+
