@@ -349,4 +349,87 @@ and manager_id contains a unique value and that combined values must have exists
 */
 
 
+--13.1
+CREATE TABLE IF NOT EXISTS exercises.departments2
+(
+ department_id int NOT NULL unique,
+ department_name varchar(40) NOT NULL,
+ manager_id int NOT NULL,
+ location_id int DEFAULT null,
+ PRIMARY KEY(department_id,manager_id)
+ )
+ Engine = InnoDB; 
+
+--Issue: ERROR 1171 (42000): All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+--Knowledge: Both primary keys can be specified together
+--Knowledge: Usage of DEFAULT and NOT NULL
+ 
+ 
+ --13.2. Insert into 'departments2' table
+ INSERT INTO exercises.departments2 VALUES 
+ (11, "Sales", 101, 100);
+ INSERT INTO exercises.departments2 VALUES 
+ (12, "Engineering", 102, 101); 
+ 
+ 
+ 
+ -- 13.3.1. CREATE TABLE OF "Employees_list"
+ CREATE TABLE IF NOT EXISTS exercises.employees_list
+ (
+  Employee_id int NOT NULL PRIMARY KEY,
+  Employee_name varchar(40) NOT NULL,
+  Manager_id int NOT NULL,
+  Department_id int NOT NULL,
+  Salary int NOT NULL,
+  FOREIGN KEY (manager_id, department_id) REFERENCES exercises.departments2 (manager_id,department_id)
+  )
+  Engine = InnoDB; 
+  
+  
+  
+ -- Issue: ERROR 1822 (HY000): Failed to add the foreign key constraint. Missing index for constraint 'employees_list_ibfk_1' in the referenced table 'departments2'
+ 
+ 
+ -- 13.3.2. Adding 'unique' in department_id
+CREATE TABLE IF NOT EXISTS exercises.employees_list ( 
+EMPLOYEE_ID integer NOT NULL PRIMARY KEY, 
+FIRST_NAME varchar(20) DEFAULT NULL, 
+LAST_NAME varchar(25) NOT NULL, 
+JOB_ID varchar(10) NOT NULL, 
+SALARY decimal(8,2) DEFAULT NULL, 
+MANAGER_ID int DEFAULT NULL, 
+DEPARTMENT_ID int DEFAULT NULL, 
+FOREIGN KEY(DEPARTMENT_ID,MANAGER_ID) 
+REFERENCES  exercises.departments2(DEPARTMENT_ID,MANAGER_ID)
+)ENGINE=InnoDB;
+
+
+
+
+-- 13.4. Insert Into 'employees_list'
+INSERT INTO exercises.employees_list VALUES 
+(01,"Shadek","Hossain", 122, 50000, 101, 11);
+INSERT INTO exercises.employees_list VALUES
+(02, "Ruhul", "Hasan", 123, 25000, 102, 12);
+
+
+/*
++-------------+------------+-----------+--------+----------+------------+---------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | JOB_ID | SALARY   | MANAGER_ID | DEPARTMENT_ID |
++-------------+------------+-----------+--------+----------+------------+---------------+
+|           1 | Shadek     | Hossain   | 122    | 50000.00 |        101 |            11 |
+|           2 | Ruhul      | Hasan     | 123    | 25000.00 |        102 |            12 |
++-------------+------------+-----------+--------+----------+------------+---------------+
+*/
+
+
+-- Knowledge: Here, department_id and manager_id must be matched with the entries in the 'departments2' table
+
+
+
+  
+  
+  
+  
+
 
