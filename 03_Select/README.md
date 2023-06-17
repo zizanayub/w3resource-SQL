@@ -101,4 +101,119 @@ FROM employees3;
 
 
 
-### ▶️ 
+### ▶️ 7. Write a query to get the maximum and minimum salary from employees table.
+
+
+
+```SQL
+-- 7. Write a query to get the maximum and minimum salary from employees table.
+SELECT MAX(Salary),MIN(Salary)
+FROM employees3;
+```
+
+
+
+
+
+### ▶️ 8. Write a query to get the average salary and number of employees in the employees table.
+
+
+
+```SQL
+-- 8. Write a query to get the average salary and number of employees in the employees table.
+SELECT AVG(Salary) "Average Salary" ,COUNT(employee_id) "Number of Employees"
+FROM employees3; 
+```
+
+
+
+
+### ▶️ 9. Write a query to get the number of employees working with the company.
+
+
+```SQL
+-- 9. Write a query to get the number of employees working with the company.
+SELECT COUNT(employee_id) "Number of Employees"
+FROM employees3; 
+```
+
+
+
+
+### ▶️ 10. Write a query to get the number of jobs available in the employees table.
+
+
+```SQL
+-- 10. Write a query to get the number of jobs available in the employees table.
+SELECT COUNT(DISTINCT job_id) "Number of Jobs"
+FROM employees3; 
+```
+
+
+
+
+
+### ▶️ 11. Write a query get all first name from employees table in upper case.
+
+
+
+
+```SQL
+-- 11. Write a query get all first name from employees table in upper case.
+SELECT UPPER(first_name) "Upper Case of First Name"
+FROM employees3; 
+```
+
+
+
+
+
+### ▶️ 12. Write a query to get the first 3 characters of first name from employees table.
+
+
+
+```SQL
+-- 12. Write a query to get the first 3 characters of first name from employees table.
+SELECT SUBSTRING(first_name,1,3)
+FROM employees3;
+```
+
+
+
+### ▶️ 13. Write a query to calculate 171*214+625.
+
+
+```
+-- 13. Write a query to calculate 171*214+625.
+SELECT 171*214+625 Result; 
+```
+
+
+
+
+### ▶️ 14. Write a query to get the names (for example Ellen Abel, Sundar Ande etc.) of all the employees from employees table.
+
+
+
+
+```
+-- 14. Write a query to get the names (for example Ellen Abel, Sundar Ande etc.) of all the employees from employees table.
+SELECT CONCAT(first_name,' ',last_name) "Name"
+FROM employees3; 
+```
+
+
+
+
+
+
+### ▶️ 15. Write a query to get first name from employees table after removing white spaces from both side.
+
+
+
+
+```SQL
+-- 15. Write a query to get first name from employees table after removing white spaces from both side.
+SELECT TRIM(first_name)
+FROM employees3;
+```
