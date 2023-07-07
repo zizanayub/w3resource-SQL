@@ -44,3 +44,26 @@ FROM employees e
 JOIN departments d
 USING (department_id); 
 
+
+
+
+
+
+
+/*
+3. Write a query to find the name (first_name, last_name), job, department ID and 
+name of the employees who works in London.
+*/
+
+
+SELECT 
+      e.first_name,
+      e.last_name,
+      e.job_id,
+      e.department_id
+FROM employees e
+JOIN departments d
+USING (department_id)
+JOIN location l 
+USING (location_id)
+WHERE l.city = "London"; 
